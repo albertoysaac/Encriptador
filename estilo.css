@@ -1,0 +1,381 @@
+*{
+	/* background: #e5e5e5; */
+}
+
+/*Encabezado (logo de alura)*/
+.header_container{
+	display: flex;
+	background: #E5E5E5;
+	width:100%;
+}
+.vector_container{
+	display:flex;
+	width: 120px;
+	height: 48px;
+	margin: 40px;
+	justify-content: center;	
+}
+/*contenedor principal del cuerpo de la pagina*/
+.superflex_container{
+	background: #E5E5E5;
+	display: flex;
+	
+}
+/*contenedor del lado izquierdo (textarea de entrada y botones)*/
+.flex_container_i{
+	display:flex;
+	flex-direction: column;
+	min-height: 750px;
+	flex-grow: 1;
+	align-items: center;
+	/* min-width:680px; */
+}
+
+/*contenedores del lado izquierdo*/
+.flex_item_i:first-child{
+	height:100%;
+	display:flex;
+	flex-grow:1;
+	justify-content: center;
+	align-items: flex-start;
+	/* min-width:750px; */
+}
+.flex_item_i:last-child{
+	display:flex;
+	flex-direction: column;
+	justify-content: flex-end; 
+}
+.flex_item_i:last-child .flex_advertencia{
+	margin-right:400px;
+}
+
+
+
+/*contenedor del lado derecho (textarea de salida y boton copiar)*/
+.flex_container_d{
+	display:flex;
+	flex-direction: column;
+	min-height: 750px;
+	min-width:460px;
+	align-items:center;
+	justify-content: center;
+}
+
+.flex_item_d{
+	margin-right:40px;
+	display:flex;
+	height: 95%;
+	min-width:400px;
+	border-radius: 32px;
+	box-shadow: 10px 24px 32px 18px rgb(215 215 215);
+	justify-content:flex-start;
+	align-items: center;
+	flex-direction:column;
+}
+
+
+.flex_item_d .item:first-child{
+	display:flex;
+	justify-content: center;
+	height:250%;
+}
+
+.flex_item_d .item:last-child{
+	display:flex;
+	align-items: flex-start;
+	justify-content:center;
+	height:100%;
+	width: 100%;
+}
+
+#contenedor1{
+	width:336;
+	display:flex;
+	align-items:center;
+}
+#contenedor2{
+	width:300px;
+	text-align: center;
+	height:50%;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 150%;
+}
+
+#mensaje1{
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 120%;
+	text-align: center;
+}
+
+#img{
+	width:336px;
+	height:304px;
+}
+
+.textarea{
+	min-width: 615px;
+	/* width:700px; */
+	/* max-width: 850px; */
+	max-height: 750px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-size: 40px;
+	line-height: 150%;
+	color: #0A3871;
+	border: none;
+	background: #E5E5E5;
+	resize: none;
+	margin-top: 20px;
+}
+
+#textareaout{
+	width: 336px;
+	max-height:600px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-size: 24px;
+	line-height: 150%;
+	color: #0A3871;
+	overflow: hidden;
+	border: none;
+	background: #E5E5E5;
+	resize: none;
+	overflow-y: auto;
+}
+
+#item_cont1{
+	width: 336px;
+	margin-top:50px;
+	height:650px;
+}
+#item_cont2{
+	height:100%;
+	display:flex;
+	flex-direction:column-reverse;
+	
+	
+}
+
+#btncopiar{
+	width: 328px;
+	height: 50px;
+	background: #D8DFE8;
+	border-radius: 24px;
+	color: #0A3871;
+	font-family: 'Inter';
+	font-style: normal;
+	font-size: 30px;
+	line-height: 8px;
+	text-align: center;
+	justify-content:center;
+	margin-bottom:30px;
+}
+
+.item_cont{
+	display:flex;
+	width:100%;
+	height:100%;
+	
+}
+textarea:focus {
+	outline: none;
+}
+
+
+.btn_encriptar{
+	width: 328px;
+	height: 50px;
+	background: #0A3871;
+	border-radius: 24px;
+	color: #D8DFE8;
+	font-family: 'Inter';
+	font-style: normal;
+	font-size: 35px;
+	line-height: 8px;
+	text-align: center;
+	margin-right:10px;
+}
+.btn_desencriptar{
+	gap: 8px;
+	width: 328px;
+	height: 50px;
+	background: #D8DFE8;
+	border-radius: 24px;
+	color: #0A3871;
+	font-family: 'Inter';
+	font-style: normal;
+	font-size: 30px;
+	line-height: 8px;
+	text-align: center;
+	/* margin-left:10px; */
+	justify-content:center
+}
+
+.footer_container{
+	display:flex;
+	height:50px;
+	width:100%;
+	background: #E5E5E5;
+	align-items:baseline;
+	
+}
+.footer_item{
+	display:flex;
+	font-size: 20px;
+	flex-direction:column-reverse;
+	height:100%;
+	background: #e5e5e5;
+}
+.footer_item .desarrollador{
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 150%;
+	text-align: center;
+	background: #e5e5e5;
+}
+#datos{
+	background: #e5e5e5;
+}
+
+@media only screen and (max-width:768px){
+	.superflex_container{
+		flex-direction:column;
+	}
+	.header_container{
+		width:100%;
+	}
+	.flex_container_d{
+		display:flex;
+		min-height:100px;
+		width:100%;
+	}
+	.flex_item_d{
+		display:flex;
+		flex-direction: column;
+		width:85%;
+		margin-right:0px;
+	}
+	#contenedor1{
+		display:none;
+	}
+	#contenedor2{
+		width:100%;
+	}
+	
+	#textareaout{
+		height:100%;
+		max-height:340px;
+		width: 100%;
+	}
+	#item_cont1{
+		margin-top:30px;
+		height:100%;
+		width: 600px;
+	}
+	#item_cont2{
+		height:100%;
+		width:100%;
+		justify-content: center;
+		align-items: center;
+	}
+	#btncopiar{
+		width: 90%;
+	}
+	.textarea{
+		max-height:590px;
+	}
+
+	.footer_container{
+		background: #E5E5E5;
+	}
+	#datos{
+		background: #E5E5E5;;
+	}
+}
+
+@media only screen and (max-width: 415px){
+	.superflex_container{
+		display: flex;
+		flex-direction:column;
+		width: 100%;
+	}
+	.flex_container_i:first-child{
+		display:flex;
+		width: 100%;
+		min-height: 680px;
+	}	
+	.flex_container_d{
+		display:flex;
+		min-height:100px;
+		min-width: 375px;
+	}
+	.flex_item_d{
+		display:flex;
+		width:85%;
+		margin-right:0px;
+		/* min-width: 375px; */
+	}
+	.flex_item_i{
+		display:flex;
+		width:100%;
+		
+	}
+	#contenedor1{
+		display:none;
+	}
+	#contenedor2{
+		width:100%;
+	}
+	
+	#textareaout{
+		max-height:340px;
+		/* width:375px; */
+	}
+	#item_cont1{
+		margin-top:30px;
+		height:100%;
+		width: 100%;
+	}
+	#item_cont2{
+		height:100%;
+		width: 90%;
+	}
+	#btncopiar{
+		width: 350px;
+	}
+	.textarea{
+		max-height: 624px;
+		min-width: 343px;
+		height:48px;
+		font-size: 32px;
+		margin:0;
+	}
+
+	.footer_container{
+		background: #E5E5E5;
+	}
+	#datos{
+		background: #E5E5E5;;
+	}
+	.flex_item_i:last-child .flex_advertencia {
+    margin-right: 0px;
+	}
+	.btn_encriptar{
+		width:98%;
+		margin:0;
+	}
+	.btn_desencriptar{
+		margin-left: 0;
+		margin-top:25px;
+		width:98%;
+	}
+	
+}
