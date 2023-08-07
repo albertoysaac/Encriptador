@@ -89,20 +89,28 @@ function ajustarAltura(textarea) {
   }
 }
 
+function eliminarAcentos(texto) {
+  if(/[áéíóúü]/i.test(texto)){
+    return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  }
+  return texto;
+}
+
 function validar(texto) {
-  if (/[^a-z\n]/.test(texto)) {
+  if (/[^a-z\n ""]/.test(texto)) {
     var opcion = confirm("El texto contiene caracteres especiales. ¿Desea limpiarlos?");
     if (opcion) {
-      texto = texto.toLowerCase().replace(/[^a-z\n]/g, "");
+      texto = eliminarAcentos(texto);
+      texto = texto.toLowerCase().replace(/[^a-z\n" "]/g, "");
+      textarea.value = texto;
       return texto;
     } else {
       return texto;
     }
-    
   }
-  
   return texto;
 }
+
 
 textarea.addEventListener('input', () => {
   const containerHeight = textarea.clientHeight;
@@ -119,16 +127,16 @@ boton_e.addEventListener("click", function() {
   const salida = document.querySelector("#textareaout");
   if(texto!=""){
     let textoNormalizado = validar(texto);
-    if(wscont1.contains(contenedor1)){
+    if(workspace.contains(wscont1)){
       let textoEncriptado = encriptar(textoNormalizado);
       let elemento = cambio(textoEncriptado);
-      wscont1.replaceChild(elemento[0], contenedor1);
-      wscont2.replaceChild(elemento[1], contenedor2);
+      workspace.replaceChild(elemento[0], wscont1);
+      workspace.replaceChild(elemento[1], wscont2);
       ajustarAltura(elemento[0].childNodes[0]);
     }
-    else if(wscont1.contains(textareaout)) {
+    else if(workspace.contains(textareaout)) {
       let textoEncriptado = encriptar(textoNormalizado);
-       salida.value = textoEncriptado;
+      salida.value = textoEncriptado;
       ajustarAltura(textareaout);
     }
   }
@@ -137,18 +145,19 @@ boton_e.addEventListener("click", function() {
 boton_d.addEventListener("click", function() {
   let texto = textarea.value;
   const salida = document.querySelector("#textareaout");
-  let textoNormalizado = validar(texto);
-  if(wscont1.contains(contenedor1)){
-    let textoEncriptado = desencriptar(textoNormalizado);
-    let elemento = cambio(textoEncriptado);
-    wscont1.replaceChild(elemento[0], contenedor1);
-    wscont2.replaceChild(elemento[1], contenedor2);
-    ajustarAltura(elemento[0].childNodes[0]);
-  }
-    else if(wscont1.contains(textareaout)) {
-      
-      let textoEncriptado = desencriptar(textarea.value);
+  if(texto!=""){
+    let textoNormalizado = validar(texto);
+    if(workspace.contains(wscont1)){
+      let textoEncriptado = desencriptar(textoNormalizado);
+      let elemento = cambio(textoEncriptado);
+      workspace.replaceChild(elemento[0], wscont1);
+      workspace.replaceChild(elemento[1], wscont2);
+      ajustarAltura(elemento[0].childNodes[0]);
+    }
+    else if(workspace.contains(textareaout)) {
+      let textoEncriptado = desencriptar(textoNormalizado);
       salida.value = textoEncriptado;
       ajustarAltura(textareaout);
     }
+  }
 });

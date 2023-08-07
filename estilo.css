@@ -63,7 +63,7 @@
 
 .flex_item_d{
 	margin-right:40px;
-	display:flex;
+	display:fle;
 	height: 95%;
 	min-width:400px;
 	border-radius: 32px;
@@ -76,35 +76,40 @@
 
 .flex_item_d .item:first-child{
 	display:flex;
-	justify-content: center;
-	height:250%;
+	height:356.25px;
+	max-height: 612.5px;
 }
 
 .flex_item_d .item:last-child{
 	display:flex;
 	align-items: flex-start;
 	justify-content:center;
-	height:100%;
+	height:356.25px;
+	min-height: 100px;
 	width: 100%;
 }
 
 #contenedor1{
-	width:336;
+	height: 400px;
 	display:flex;
-	align-items:center;
 }
 #contenedor2{
+	display: flex;
+	flex-direction: column;
 	width:300px;
-	text-align: center;
+	text-align: flex-start;
 	height:50%;
 	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 150%;
+	align-items: flex-start;
 }
 
 #mensaje1{
+	display: block;
+	width: 100%;
 	font-family: 'Inter';
 	font-style: normal;
 	font-weight: 700;
@@ -112,16 +117,18 @@
 	line-height: 120%;
 	text-align: center;
 }
+#mensaje2 {
+	text-align: center;
+}
 
 #img{
 	width:336px;
 	height:304px;
+	margin: 48px 32px;
 }
 
 .textarea{
 	min-width: 615px;
-	/* width:700px; */
-	/* max-width: 850px; */
 	max-height: 750px;
 	font-family: 'Inter';
 	font-style: normal;
@@ -135,11 +142,12 @@
 }
 
 #textareaout{
-	width: 336px;
+	width: 360px;
 	max-height:600px;
 	font-family: 'Inter';
 	font-style: normal;
 	font-size: 24px;
+	text-align: center;
 	line-height: 150%;
 	color: #0A3871;
 	overflow: hidden;
@@ -147,19 +155,19 @@
 	background: #E5E5E5;
 	resize: none;
 	overflow-y: auto;
+	margin: 30px 20px 0px 20px;
 }
 
 #item_cont1{
-	width: 336px;
-	margin-top:50px;
-	height:650px;
+	width: 100%;
+	height: 600px;
+	max-height: 612.5px;	
 }
 #item_cont2{
-	height:100%;
+	width: 100%;
+	height: 100px;
 	display:flex;
-	flex-direction:column-reverse;
-	
-	
+	align-items: baseline;
 }
 
 #btncopiar{
@@ -173,8 +181,7 @@
 	font-size: 30px;
 	line-height: 8px;
 	text-align: center;
-	justify-content:center;
-	margin-bottom:30px;
+	margin: 0 auto;
 }
 
 .item_cont{
